@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyOM iOS App</title>
+    <!-- styles -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <article>
+        <h3>Hello <%= user.username %></h3>
+        <img class="avatar" src="<%= user.profilePicture %>"/>
+        <p>Your invite is:</p>
+        <code><%=user.inviteCode %></code>
+        
+        <% if(iosLink) {%>
+            <p>
+            <a href="<%=iosLink %>">Open directly using your MyOM app.</a>
+            </p>
+        
+        <% } %>
+    </article>
+    <span class="env <%= env %>"><%= env === 'production' ? 'prod' : 'dev'  %></span>
+</body>
+</html>
