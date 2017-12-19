@@ -1,0 +1,27 @@
+[{
+    "id": "1",
+    "firstName": "michelle",
+    "lastName": "ryan",
+    "username": "michyan",
+    "profilePicture": "https://randomuser.me/api/portraits/women/40.jpg",
+    "token": "CiFo35ia",
+    "inviteCode": ""
+},
+{
+    "id": "2",
+    "firstName": "andres",
+    "lastName": "crespo",
+    "username": "greenostrich315",
+    "profilePicture": "https://randomuser.me/api/portraits/men/9.jpg",
+    "token": "pmZfJSIc",
+    "inviteCode": ""
+},
+{
+    "id": "3",
+    "firstName": "barış",
+    "lastName": "özgörkey",
+    "username": "whiterabbit496",
+    "profilePicture": "https://randomuser.me/api/portraits/men/28.jpg",
+    "token": "TexzO2W7",
+    "inviteCode": ""
+}]
