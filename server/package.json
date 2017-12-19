@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "Simple server for bazynga app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "prod": "NODE_ENV=production node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "gextend": "^0.3.0",
+    "localtunnel": "^1.8.3",
+    "marked": "^0.3.7",
+    "seinfeld-quotes": "^1.0.0",
+    "useragent": "^2.2.1"
+  }
+}
