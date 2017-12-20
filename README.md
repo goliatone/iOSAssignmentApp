@@ -23,7 +23,7 @@ After the Carousel View the user is presented with a page with an input field as
 
 The user would get a link to the invite page through a direct email. The Server provides an [endpoint for each](http://127.0.0.1:3000/invite/email/1) user to retrieve the registration code.
 
-Users should enter this token in the iOS application, in the Invite Code screen. Once the User submits the token, the application will send an HTTP POST request to the Server with the token. If the token is valid, the Server responds with a payload that includes user information.
+Users should enter this token in the iOS application, in the Invite Code screen. Once the User submits the token, the application will send an HTTP POST request to the Server with the token. If the token is valid, the Server responds with [a payload](#user-payload) that includes user information.
 
 ![04](/img/04_invite_code.png)
 
@@ -32,6 +32,8 @@ Users should enter this token in the iOS application, in the Invite Code screen.
 ### Profile
 
 This payload includes an `accessToken` field. In order for Users to update their profile using the iOS application, the `accessToken` should be used to authenticate the user.
+
+When the user enters the profile page, the MyOM app will query the server to get a quote for the user.
 
 ![06](/img/06_profile.png)
 
@@ -85,7 +87,7 @@ Example URL:
 [http://localhost:3000/api/user/2](http://localhost:3000/api/user/2)
 
 
-Example result:
+#### User payload
 
 ```json
 {
@@ -137,14 +139,30 @@ Endpoint used by the iOS application to redeem an invitation code.
 
 ## MyOM MVP
 
-* User opens the app, sees carousel.
-* Users that have not registered the app are shown a screen to enter invite code.
-* App sends invite code to server.
-* Invite codes are valid only once.
+The team will be happy seeing a MVP with the following functionality:
 
-### Comments from the team
+* Show all screens in wireframes
+* Enter Invite Code
+* Validate code
+* Once user is registerd go directly to their profile
+* Show quote in profile
+* Show edit profile view
 
-#### UX
+If possible, make the profile view functional.
+
+Some thoughts:
+
+* Use any libraries that you would normally use. 
+* You might not have enough time to finish everything, plan accordingly and pick what you decide to implement and what to leave for the extra time.
+* Use pods? Good. You prefer something else, great.
+* How do you architect an application so that can add features without investing too much time up-front?
+* Do you usually write tests? Do you need to write tests?
+* Where can you "cheat" and add a nice detail for cheap?
+
+
+### Comments from the "team"
+
+#### UX & Design
 
 Carousel:
 
@@ -153,15 +171,24 @@ Carousel:
 Quotes:
 >It would be cool if the User, once in their profile page, can pull to refresh the quote.
 
+Animations:
+
+>Adding animations is always a nice touch, as long as it does not detract from the functionality. Nice to have.
+
+Gestures:
+
+>Being able to navigate using gestures is the preferred option, better than clicking buttons.
+
+Micro-interactions:
+
+>Showing system status, highlighting changes, keeping context, visualizing input... you can enhance a Users experience focusing on the small details.
 
 
 ### Extra points
 
 Typing the invite code is far from ideal. Our PM has decided improve the user experience, the request is to implement "deep links". When the user checks the invite email using their iPhone, a new link will show up in the website:
 
-```
-Open directly using your MyOM app.
-``` 
+<a href="myom://signup?token=jbe9ofm7-yt28ks5ouai">Open directly using your MyOM app.</a>
 
 Users should be able to skip the carousel and just see a validation screen, letting them know the invite is being processed.
 
