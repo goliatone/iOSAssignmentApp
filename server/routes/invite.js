@@ -17,8 +17,8 @@ module.exports.init = function (app) {
             const content = marked(data.toString());
             res.render('index', { content });
         });
-
     });
+    
     /**
      * Generate invite code for a given 
      * user.
