@@ -37,7 +37,7 @@ When the user enters the profile page, the MyOM app will query the server to get
 
 ![06](/img/06_profile.png)
 
-![07](/img/07_edit profile.png)
+![07](/img/07_edit_profile.png)
 
 
 ## Server 
